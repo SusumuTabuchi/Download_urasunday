@@ -1,0 +1,27 @@
+{
+    "urasunday": {
+        "url": {
+            "top": "https://urasunday.com/",
+            "imgUrl": "https://app.manga-one.com/drm/webp/manga_page_high/"
+        },
+        "xpath": {
+            "upload": "/html/body/section[1]/ul/li",
+            "view": "//*[@id=\"viewer\"]/div[1]/div[1]/div[1]/div/div/div",
+            "viewAfter": "//*[@id=\"viewer\"]/div[1]/div[1]/div[{ADDNUMBER}]/div/div[2]/div",
+            "viewsSurface": "//*[@id=\"viewer\"]/div[1]/div[1]",
+            "numberOfStories": "/html/body/div[3]/div[1]/div[1]"
+        },
+        "others": {
+            "timeOut": 10,
+            "zeroFill": 3
+        },
+        "path": {
+            "list": ".\\getList.txt",
+            "savePath": ".\\Image\\",
+            "archivePath": ".\\archive\\"
+        }
+    },
+    "logger": {
+        "format": "[%(asctime)s (%(name)14s)] %(levelname)6s : %(message)s"
+    }
+}

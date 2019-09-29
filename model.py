@@ -6,6 +6,7 @@ import base64
 import glob
 import os
 from logging import getLogger, StreamHandler, Formatter
+from PIL import Image
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -29,6 +30,7 @@ archive_path = conf["urasunday"]["path"]["archivePath"]
 number_of_stories_xpath = conf["urasunday"]["xpath"]["numberOfStories"]
 zero_fill = conf["urasunday"]["others"]["zeroFill"]
 img_url = conf["urasunday"]["url"]["imgUrl"]
+img_path = conf["urasunday"]["path"]["imagePath"]
 
 class Files:
     """ファイルを読み込んだり吐き出したり"""
@@ -413,6 +415,58 @@ class TimeOutError(Exception):
     def __str__ (self):
         return ("既定のtimeoutに達しました。")
 
+class _Image:
+    """
+    画像変換
+    """
+    def preparation(self, image_path):
+        """
+        画像をimageフォルダに移動する
+
+        Parameters
+        ----------
+        image_path : リスト
+            移動するファイルパス
+
+        Returns
+        -------
+        moved_file_path : str(リスト)
+        """
+        moved_file_path = []
+        for i in image_path:
+            if os.path.exists(i):
+                file_name = os.path.basename(i)
+                shutil.copy2(i, img_path + file_name)
+                moved_file_path.append(img_path + file_name)
+                logger.debug("file copy {}".format(file_name))
+            else:
+                logger.debug("file not found :{}".format(i))
+        
+        return moved_file_path
+    
+    def image_convert(self, image_path, extension="png"):
+        """
+        画像ファイルを指定した拡張子に変換する
+        
+        Parameters
+        ----------
+        image_path : str(リスト)
+            画像のパス
+        extention : str
+            拡張子（規定値はpng）
+        """
+        for i in image_path:
+            if os.path.exists(i):
+                img = Image.open(i)
+                img.save(i, extension)
+                logger.debug("convert complete {}".format(i))
+            else:
+                logger.debug("img {} is not found")
+
+        
+
+
+
 
 # 漫画ページで１話だけダウンロード
 if __name__ == "__main__":
@@ -436,3 +490,11 @@ if __name__ == "__main__":
         print(e)
     finally:
         d._quit()
+
+# debug
+# if __name__ == "__main__":
+#     img = _Image()
+#     img_list = glob.glob(r'E:\susumuTabuchi\Desktop\workspace\development\Download_urasundy\archive\3インチ\第41話\*')
+#     img.preparation(img_list)
+#     img.image_convert(img_list)
+

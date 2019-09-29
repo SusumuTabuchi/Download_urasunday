@@ -18,7 +18,8 @@
         "path": {
             "list": ".\\getList.txt",
             "savePath": ".\\Image\\",
-            "archivePath": ".\\archive\\"
+            "archivePath": ".\\archive\\",
+            "imagePath": ".\\Image\\"
         }
     },
     "logger": {

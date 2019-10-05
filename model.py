@@ -471,7 +471,8 @@ class _Image:
 # 漫画ページで１話だけダウンロード
 if __name__ == "__main__":
     # 対象のURL
-    url = "https://urasunday.com/title/659"
+    url = "https://urasunday.com/title/55"
+    # 最終更新10/5
     
     try:
         d = Urasunday()

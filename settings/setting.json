@@ -23,6 +23,6 @@
         }
     },
     "logger": {
-        "format": "[%(asctime)s (%(name)14s)] %(levelname)6s : %(message)s"
+        "format": "[%(asctime)s (%(name)-14s)] %(levelname)6s : %(message)s"
     }
 }

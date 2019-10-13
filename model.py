@@ -471,22 +471,27 @@ class _Image:
 # 漫画ページで１話だけダウンロード
 if __name__ == "__main__":
     # 対象のURL
-    url = "https://urasunday.com/title/55"
+    # url = "https://urasunday.com/title/55"
+    url_list = [
+        "https://urasunday.com/title/177/99429",
+        "https://urasunday.com/title/701/99432"
+    ]
     # 最終更新10/5
     
     try:
         d = Urasunday()
-        d.page_move(url, 5)
-        title = d.driver.find_element_by_xpath('/html/body/div[3]/div[2]/div[1]/div[1]/h1').text
-        num = d.get_number_of_stories()
-        save_dir = d.create_manga_directory(title, num)
-        d.page_prev()
-        src_list = d.get_img_src()
-        min_num, zero = 1, 3
-        for src in src_list:
-            file_name = str(min_num).zfill(zero) + ".png"
-            d.save_image(src, save_path=save_dir + "\\" + file_name)
-            min_num += 1
+        for url in url_list:
+            d.page_move(url, 5)
+            title = d.driver.find_element_by_xpath('/html/body/div[3]/div[2]/div[1]/div[1]/h1').text
+            num = d.get_number_of_stories()
+            save_dir = d.create_manga_directory(title, num)
+            d.page_prev()
+            src_list = d.get_img_src()
+            min_num, zero = 1, 3
+            for src in src_list:
+                file_name = str(min_num).zfill(zero) + ".png"
+                d.save_image(src, save_path=save_dir + "\\" + file_name)
+                min_num += 1
     except Exception as e:
         print(e)
     finally:

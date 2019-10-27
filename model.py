@@ -473,8 +473,21 @@ if __name__ == "__main__":
     # 対象のURL
     # url = "https://urasunday.com/title/55"
     url_list = [
-        "https://urasunday.com/title/177/99429",
-        "https://urasunday.com/title/701/99432"
+        "https://urasunday.com/title/177/101163",
+        "https://urasunday.com/title/177/102171",
+        "https://urasunday.com/title/234/100551",
+        "https://urasunday.com/title/701/101166",
+        "https://urasunday.com/title/701/102354",
+        "https://urasunday.com/title/98/100545",
+        "https://urasunday.com/title/98/102156",
+        "https://urasunday.com/title/153/100239",
+        "https://urasunday.com/title/66/101124",
+        "https://urasunday.com/title/66/102339",
+        "https://urasunday.com/title/55/99873",
+        "https://urasunday.com/title/55/100851",
+        "https://urasunday.com/title/561/99612",
+        "https://urasunday.com/title/42/93036",
+        "https://urasunday.com/title/659/99876"
     ]
     # 最終更新10/5
     
@@ -482,7 +495,7 @@ if __name__ == "__main__":
         d = Urasunday()
         for url in url_list:
             d.page_move(url, 5)
-            title = d.driver.find_element_by_xpath('/html/body/div[3]/div[2]/div[1]/div[1]/h1').text
+            title = d.driver.find_element_by_xpath('/html/body/div[4]/div[2]/div[1]/div[1]/h1').text
             num = d.get_number_of_stories()
             save_dir = d.create_manga_directory(title, num)
             d.page_prev()

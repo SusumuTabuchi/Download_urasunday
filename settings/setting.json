@@ -9,7 +9,7 @@
             "view": "//*[@id=\"viewer\"]/div[1]/div[1]/div[1]/div/div/div",
             "viewAfter": "//*[@id=\"viewer\"]/div[1]/div[1]/div[{ADDNUMBER}]/div/div[2]/div",
             "viewsSurface": "//*[@id=\"viewer\"]/div[1]/div[1]",
-            "numberOfStories": "/html/body/div[3]/div[1]/div[1]"
+            "numberOfStories": "/html/body/div[4]/div[1]/div[1]"
         },
         "others": {
             "timeOut": 10,

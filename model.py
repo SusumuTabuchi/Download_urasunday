@@ -473,23 +473,13 @@ if __name__ == "__main__":
     # 対象のURL
     # url = "https://urasunday.com/title/55"
     url_list = [
-        "https://urasunday.com/title/177/101163",
-        "https://urasunday.com/title/177/102171",
-        "https://urasunday.com/title/234/100551",
-        "https://urasunday.com/title/701/101166",
-        "https://urasunday.com/title/701/102354",
-        "https://urasunday.com/title/98/100545",
-        "https://urasunday.com/title/98/102156",
-        "https://urasunday.com/title/153/100239",
-        "https://urasunday.com/title/66/101124",
-        "https://urasunday.com/title/66/102339",
-        "https://urasunday.com/title/55/99873",
-        "https://urasunday.com/title/55/100851",
-        "https://urasunday.com/title/561/99612",
-        "https://urasunday.com/title/42/93036",
-        "https://urasunday.com/title/659/99876"
+    "https://urasunday.com/title/24",
+    "https://urasunday.com/title/349",
+    "https://urasunday.com/title/66",
+    "https://urasunday.com/title/659",
+    "https://urasunday.com/title/98"
     ]
-    # 最終更新10/5
+    # 最終更新11/2
     
     try:
         d = Urasunday()

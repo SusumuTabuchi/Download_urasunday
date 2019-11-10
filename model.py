@@ -478,7 +478,7 @@ if __name__ == "__main__":
     "https://urasunday.com/title/153",
     "https://urasunday.com/title/98"
     ]
-    # 最終更新11/9
+    # 最終更新11/10
     
     try:
         d = Urasunday()

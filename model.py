@@ -310,7 +310,7 @@ class Urasunday(Files):
         img_src_list : list
             imgのsrc属性をリストですべて返す
         """
-        img_list = self.driver.find_elements_by_tag_name("img")
+        img_list = self.driver.find_element_by_id("viewer").find_elements_by_tag_name("img")
         img_src_list = []
         for img in img_list:
             img_src = img.get_attribute("src")
@@ -473,15 +473,11 @@ if __name__ == "__main__":
     # 対象のURL
     # url = "https://urasunday.com/title/55"
     url_list = [
-    
-    "https://urasunday.com/title/66/104742",
-    "https://urasunday.com/title/701",
-    "https://urasunday.com/title/177",
-    "https://urasunday.com/title/561",
-    "https://urasunday.com/title/55",
-    "https://urasunday.com/title/55/104484"
+        'https://urasunday.com/title/55',
+        'https://urasunday.com/title/66',
+        'https://urasunday.com/title/98',
+        'https://urasunday.com/title/98/113274'
     ]
-    # 最終更新12/3
     
     try:
         d = Urasunday()

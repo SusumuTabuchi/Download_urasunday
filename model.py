@@ -473,11 +473,13 @@ if __name__ == "__main__":
     # 対象のURL
     # url = "https://urasunday.com/title/55"
     url_list = [
-        'https://urasunday.com/title/561',
+        'https://urasunday.com/title/701/124718',
+        'https://urasunday.com/title/177',
         'https://urasunday.com/title/24',
-        'https://urasunday.com/title/349',
+        'https://urasunday.com/title/55',
         'https://urasunday.com/title/659',
-        'https://urasunday.com/title/42'
+        'https://urasunday.com/title/66/124850',
+        'https://urasunday.com/title/98'
     ]
     
     try:

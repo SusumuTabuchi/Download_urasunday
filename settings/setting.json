@@ -24,5 +24,12 @@
     },
     "logger": {
         "format": "[%(asctime)s (%(name)-14s)] %(levelname)6s : %(message)s"
+    },
+    "DBsettings": {
+        "user": "urasunday_user",
+        "passwd": "XXI2cvPIwHDnjw8w",
+        "host": "localhost",
+        "db": "urasunday",
+        "charset": "utf8"
     }
 }
